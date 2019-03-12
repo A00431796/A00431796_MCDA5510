@@ -1,9 +1,10 @@
-package com.dpenny.mcda5510.connect;
+package dbConnection;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class MySQLJDBCConnection implements DBConnection{
-
+public class MySQLJDBCConnection implements DBConnection {
+	
 	public Connection setupConnection()  {
 
 		Connection connection = null;
@@ -13,18 +14,24 @@ public class MySQLJDBCConnection implements DBConnection{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			// Setup the connection with the DB
 
-			connection = DriverManager.getConnection("jdbc:mysql://localhost/transactoins?" 				+ "user=root&password=db123456" // Creds
+			connection = DriverManager.getConnection("jdbc:mysql://localhost/java?"+ "user=root&password=root" // Creds
 					+ "&useSSL=false" // b/c localhost
-					+ "&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"); // timezone
+				+ "&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"); // timezone
+			
+				//	connection=	 DriverManager.getConnection("jdbc:mysql://localhost/java?" +
+                 //    "user=root&password=root");
 
+			System.out.println("Connection Successfull");
+			
+		
 		} catch (Exception e) {
+			System.out.println(e);
 			System.out.println("Error setting up connectino");
 			e.printStackTrace();
 		} finally {
 
 		}
 		return connection;
-	}		
-	
-	
+	}	
+
 }

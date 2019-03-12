@@ -1,4 +1,5 @@
-package com.dpenny.mcda5510.connect;
+package dbConnection;
+
 import java.sql.Array;
 import java.sql.Blob;
 import java.sql.CallableStatement;
@@ -18,7 +19,7 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.Executor;
 
-public class MockConnection implements Connection {
+public class MockConnection implements Connection { 
 
 	@Override
 	public <T> T unwrap(Class<T> iface) throws SQLException {

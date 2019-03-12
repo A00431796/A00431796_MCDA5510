@@ -1,4 +1,4 @@
-package com.dpenny.mcda5510.connect;
+package dbConnection;
 
 import java.sql.Connection;
 
@@ -23,5 +23,6 @@ public class ConnectionFactory {
 
 		return null;
 	}
+
 
 }
