@@ -28,6 +28,7 @@ public class Assingment2 {
 	public static Connection single_instance;
 	static Logger logger = Logger.getLogger("Main");
 	static Handler fileHandler = null;
+	static Handler fileHandler1 = null;
 	static SimpleFormatter simpleFormatter = null;
 	
 	public static Connection getInstance() {
@@ -47,10 +48,14 @@ public class Assingment2 {
 			ConnectionFactory factory = new ConnectionFactory();
 			Connection connection = factory.getConnection("mySQLJDBC");     
 			fileHandler = new FileHandler("./sampleLogfile.log");
+			fileHandler1 = new FileHandler("./Output.txt");
+			
 			
 			simpleFormatter = new SimpleFormatter();
 			fileHandler.setFormatter(simpleFormatter);
+			fileHandler1.setFormatter(simpleFormatter);
 			logger.addHandler(fileHandler);
+			logger.addHandler(fileHandler1);
 			 
 			fw.DisplayMenu(connection);
 			   
